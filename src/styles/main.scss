@@ -1,17 +1,19 @@
+@import './colors';
+@import './transitions';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 body {
-    background-color: aqua;
     font-family: "Istok Web", sans-serif;
 }
 
 .content-grid {
     --padding-inline: 1rem;
-    --content-max-width: 1400px;
-    --breakout-max-width: 1800px;
+    --content-max-width: 1000px;
+    --breakout-max-width: 1400px;
     --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
 
     display: grid;
@@ -33,10 +35,6 @@ body {
 }
 
 
-::selection {
-    background-color: var(--clr-primary-500);
-    color: var(--clr-white);
-}
 
 .next-button {
     border: none;

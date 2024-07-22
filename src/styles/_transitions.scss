@@ -1,0 +1,51 @@
+// Variables for animation properties
+$transition-duration: 1s;
+$transition-timing-function: ease-in-out;
+
+// Mixin for initial state
+@mixin initial-state($transform) {
+  opacity: 0;
+  transform: $transform;
+  transition: all $transition-duration $transition-timing-function;
+}
+
+// Mixin for active state
+@mixin active-state {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+// Initial state classes
+.slide-in-left, .slide-in-right, .slide-in-bottom, .fade-in {
+  @include initial-state(null);
+}
+
+// Slide-in animations
+.slide-in-left {
+  @include initial-state(translateX(-100%));
+  &.active {
+    @include active-state;
+  }
+}
+
+.slide-in-right {
+  @include initial-state(translateX(100%));
+  &.active {
+    @include active-state;
+  }
+}
+
+.slide-in-bottom {
+  @include initial-state(translateY(100%));
+  &.active {
+    @include active-state;
+  }
+}
+
+// Fade-in animation
+.fade-in {
+  @include initial-state(null);
+  &.active {
+    @include active-state;
+  }
+}

@@ -24,6 +24,11 @@ export default {
                 '950': '#0c0c0c',
             },
         },
+        aspectRatio: {
+            '3/2': '3 / 2',  // Add your custom aspect ratio here
+            '4/3': '4 / 3',  // Another example
+            '3/4': '3 / 4',  // Another example
+        },
     },
   },
   plugins: [],

@@ -7,12 +7,7 @@ import { sveltePreprocess } from 'svelte-preprocess';
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: sveltePreprocess({
-        // scss: {
-        //     includePaths: ['src/styles'], // Optional, specify additional include paths
-        //     prependData: `@import './src/styles/main.scss';`
-        // },
-    }),
+	preprocess: sveltePreprocess({}),
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
