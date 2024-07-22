@@ -1,7 +1,10 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import H2 from "$lib/components/h2.svelte";
+
+</script>
 
 
-<div class="py-10 space-y-6 h-[90vh] lg:py-16 grid gap-16 content-center lg:grid-cols-2 lg:items-center breakout">
+<div class="py-10 space-y-6 sm:h-[90vh] lg:py-16 grid sm:gap-16 content-center lg:grid-cols-2 lg:items-center breakout">
 
     <div class="w-full">
         <h1 class="text-5xl font-bold text-primary lg:text-6xl">
@@ -11,20 +14,25 @@
         <div class="mt-8 space-y-5">
             <p class="text-lg xl:text-xl max-w-[30rem]">
                 We offer a complete range of services to meet your home and business needs. From professional cleaning, trash management, and laundry services to exceptional catering, bakery treats, and quality supplies, we ensure your spaces are spotless and your events are memorable. 
+            </p>
+            <div class="hidden">    
                 <br><br>
                 Experience the perfect blend of cleanliness, efficiency, and culinary excellence with Kamy's Delights
-            </p>
+            </div>
         </div>
     </div>
 
     <div class="items-center grid grid-cols-2 gap-4 lg:flex justify-center w-full relative">
-        <img class="object-cover rounded-lg lg:rounded-[2.5rem] aspect-[4/3] lg:max-w-[350px] xl:max-w-[450px] lg:absolute lg:translate-x-[30%] lg:translate-y-[30%] shadow-lg" src="/images/cleaning_table.webp" alt="cleaning a table">
+        <img class="object-cover rounded-md lg:rounded-[2.5rem] aspect-[4/3] lg:max-w-[350px] xl:max-w-[450px] lg:absolute lg:translate-x-[30%] lg:translate-y-[30%] shadow-lg" src="/images/cleaning_table.webp" alt="cleaning a table">
 
-        <img class="object-cover rounded-lg lg:rounded-[2.5rem] aspect-[4/3] lg:max-w-[350px] xl:max-w-[450px] lg:absolute lg:translate-x-[-30%] lg:translate-y-[-30%] shadow-lg" src="/images/cutlery_1.webp" alt="cutlery set for event">
+        <img class="object-cover rounded-md lg:rounded-[2.5rem] aspect-[4/3] lg:max-w-[350px] xl:max-w-[450px] lg:absolute lg:translate-x-[-30%] lg:translate-y-[-30%] shadow-lg" src="/images/cutlery_1.webp" alt="cutlery set for event">
     </div>
 </div>
 
 <section class="services pt-48 sm:pt-60 pb-10 md:pb-44 breakout">
+    <div class="mb-8">
+        <H2 text="What we do"/>
+    </div>
     <div class="grid gap-8 md:grid-cols-2 md:gap-10 lg:gap-16">
         <div class="rounded-xl overflow-hidden min-h-96 bg-cover relative group xl:aspect-[4/3] max-w-[650px]" style="background-image: url('/images/fork_scroll.webp');">
             <div class="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(0,0,0,0)] z-[1] transition-all duration-500 opacity-90 group-hover:opacity-100"></div>
@@ -92,10 +100,11 @@
 <svg class="w-full mt-32 translate-y-1 full-width" viewBox="0 0 1440 240" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0 16L48 26.7C96 37 192 59 288 64C384 69 480 59 576 37.3C672 16 768 -16 864 10.7C960 37 1056 123 1152 133.3C1248 144 1344 80 1392 48L1440 16V240H1392C1344 240 1248 240 1152 240C1056 240 960 240 864 240C768 240 672 240 576 240C480 240 384 240 288 240C192 240 96 240 48 240H0V16Z" fill="#682F76"/>
 </svg>   
-<section class="full-width content-grid pb-40 sm:pb-24 pt-24 lg:pt-0 lg:pb-60 bg-primary">
+<section class="full-width content-grid pb-40 sm:pb-24 pt-16 sm:pt-24 lg:pt-0 lg:pb-60 bg-primary">
     <div class="grid gap-y-16 md:gap-8 md:grid-cols-5 lg:gap-24 breakout">
         <div class="md:col-span-2">
-            <p class="text-2xl lg:text-4xl text-light">
+            <H2 text="Our Approach"/>
+            <p class="text-2xl lg:text-4xl text-light mt-8">
                 At Kamy’s Delights, we take pride in our commitment to excellence and professionalism. We prioritize customer satisfaction above all else, striving to exceed expectations. Our standard of care ensures the highest standard of efficiency of our services.
             </p>
         </div>

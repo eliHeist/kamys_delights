@@ -1,39 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/header.svelte';
 	import '../styles/main.scss';
-	import { onMount } from 'svelte';
-
-	onMount(() => {
-		document.addEventListener('DOMContentLoaded', () => {
-			const options: IntersectionObserverInit = {
-				root: null, // relative to the viewport
-				rootMargin: '0px',
-				threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] // multiple thresholds for better performance
-			};
-
-			const observer = new IntersectionObserver(
-				(entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-					entries.forEach((entry) => {
-						if (entry.intersectionRatio > 0.2) {
-							// element is 20% visible in the viewport
-							(entry.target as HTMLElement).classList.add('active');
-							observer.unobserve(entry.target); // stop observing once the animation is applied
-						}
-					});
-				},
-				options
-			);
-
-			// Select elements to observe
-			const elementsToObserve = document.querySelectorAll<HTMLElement>(
-				'.slide-in-left, .slide-in-right, .slide-in-bottom, .fade-in'
-			);
-            console.log(elementsToObserve);
-			elementsToObserve.forEach((element) => {
-				observer.observe(element);
-			});
-		});
-	});
 </script>
 
 <Header />
@@ -50,8 +17,6 @@
 					<svg
 						class="fill-white h-6"
 						viewBox="0 0 60 60"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
 							d="M30 3.75C24.5319 3.75645 19.2896 5.93151 15.4231 9.79805C11.5565 13.6646 9.38146 18.9069 9.37501 24.375C9.36999 28.8433 10.8295 33.1901 13.53 36.75C13.53 36.75 14.0925 37.4906 14.1844 37.5975L30 56.25L45.8231 37.5881C45.9056 37.4888 46.47 36.75 46.47 36.75L46.4719 36.7444C49.1706 33.1858 50.6294 28.8412 50.625 24.375C50.6186 18.9069 48.4435 13.6646 44.577 9.79805C40.7104 5.93151 35.4681 3.75645 30 3.75ZM30 31.875C28.5167 31.875 27.0666 31.4351 25.8332 30.611C24.5999 29.7869 23.6386 28.6156 23.0709 27.2451C22.5033 25.8747 22.3547 24.3667 22.6441 22.9118C22.9335 21.457 23.6478 20.1206 24.6967 19.0717C25.7456 18.0228 27.082 17.3085 28.5368 17.0191C29.9917 16.7297 31.4997 16.8782 32.8701 17.4459C34.2406 18.0136 35.4119 18.9749 36.236 20.2082C37.0601 21.4416 37.5 22.8916 37.5 24.375C37.4975 26.3634 36.7066 28.2696 35.3006 29.6756C33.8946 31.0815 31.9884 31.8725 30 31.875Z"
@@ -76,9 +41,7 @@
 					</svg>
 					<h3 class="text-lg font-semibold mb-1">Email</h3>
 				</div>
-				<a href="mailto:kamysdelightslimited@gmail.com" class="hover:text-gray-300 text-light"
-					>kamysdelightslimited@gmail.com</a
-				>
+				<a href="mailto:kamysdelightslimited@gmail.com" class="hover:text-gray-300 text-light">kamysdelightslimited@gmail.com</a>
 			</div>
 			<div class="w-fit">
 				<div class="flex gap-3 iems-center">

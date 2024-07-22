@@ -45,12 +45,17 @@
                                 Laundry Care
                             </a>
                         </li>
+                        <li>
+                            <a href="/get_in_touch/" class="flex md:hidden py-2 font-medium text-body-color hover:text-primary" on:click={toggleNav}>
+                                Get in Touch
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
             <!-- cta -->
             <div class="justify-end flex gap-x-4 sm:gap-x-24 lg:pr-0 w-max">
-                <a href="/get_in_touch/" class="py-3 text-base font-medium text-white rounded-md bg-primary px-7 hover:bg-primary/90">
+                <a href="/get_in_touch/" class="hidden md:block py-3 text-base font-medium text-white rounded-md bg-primary px-7 hover:bg-primary/90">
                     Get in Touch
                 </a>
 
