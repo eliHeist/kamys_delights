@@ -41,7 +41,7 @@ export function slideIn() {
                     start: 'top 80%',
                     end: 'top 20%',
                     scrub: true,
-                    markers: true
+                    markers: false
                 },
                 opacity: 0,
                 top: 200,
@@ -64,7 +64,7 @@ export function fadeIn() {
                 start: 'top 80%',
                 end: 'top center',
                 scrub: true,
-                markers: true
+                markers: false
             },
             opacity: 0,
             duration: 1,
