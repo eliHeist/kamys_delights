@@ -1,6 +1,24 @@
 <script lang="ts">
 	import Header from '$lib/header.svelte';
 	import '../styles/main.scss';
+    import Lenis from "lenis";
+    import { onMount } from "svelte";
+    import { slideIn, fadeIn } from "$lib/scripts/textAnimation";
+
+    onMount(() => {
+        slideIn()
+        fadeIn()
+        
+        // lenis
+        const lenis = new Lenis()
+    
+        function raf(time:any) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+    
+        requestAnimationFrame(raf)
+    })
 </script>
 
 <Header />

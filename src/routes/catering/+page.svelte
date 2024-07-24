@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    <div class="content-grid lg:hidden">
+    <div class="content-grid md:hidden">
         <img class="w-full object-cover aspect-4/3 full-width max-h-[50vh]" src="/images/edible_arrangement.webp" alt="Edible arrangement">
     
         <div class="text mt-8">

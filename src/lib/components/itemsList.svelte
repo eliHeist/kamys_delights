@@ -1,16 +1,67 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+    // register srcolltrigger
+    gsap.registerPlugin(ScrollTrigger);
     
 	let icons: HTMLElement[] = [];
 
 	onMount(() => {
 		// Get all .item-icon elements
-		const items = document.querySelectorAll('.item-icon');
-		icons = Array.from(items) as HTMLElement[];
+		const cards = document.querySelectorAll('.point-card') as NodeListOf<HTMLDivElement>;
 
-		// Draw lines between adjacent icons
-		// drawLinesBetweenIcons();
-	});
+		// scroll animations
+        cards.forEach((card:HTMLDivElement, i:number) => {
+            const icon = card.querySelector('.item-icon') as HTMLDivElement;
+            const title = card.querySelector('.title') as HTMLDivElement;
+            const points = card.querySelector('.points') as HTMLDivElement;
+
+            let is_even = i%2 == 0;
+
+            // icon animation
+            gsap.from(icon, {
+                scrollTrigger: {
+                    trigger: icon,
+                    start: 'top 80%',
+                    end: 'top center',
+                    scrub: 1
+                },
+                rotate: 180,
+                opacity: 0,
+                scale: 0.5,
+                left: 100,
+                duration: 1
+            });
+
+            // icon animation
+            gsap.from(title, {
+                scrollTrigger: {
+                    trigger: title,
+                    start: 'top 80%',
+                    end: 'top 55%',
+                    scrub: 1
+                },
+                stagger: 0.2,
+                opacity: 0.2,
+                left: 50,
+            });
+
+            // icon animation
+            gsap.from(points, {
+                scrollTrigger: {
+                    trigger: points,
+                    start: 'top 80%',
+                    end: 'top 50%',
+                    scrub: 1
+                },
+                stagger: 0.2,
+                opacity: 0.1,
+                top: 100,
+            });
+        })
+    });
 
 	function drawLinesBetweenIcons() {
 		let linesContainer = document.querySelector('.lines-container') as HTMLDivElement;
@@ -64,24 +115,20 @@
 			{#if index % 2 != 0}
 				<div class="hidden sm:block"></div>
 			{/if}
-			<div
-				class="point-card grid gap-x-3 md:gap-x-6 lg:gap-x-8 xl:gap-x-12"
-				class:reverse={index % 2 == 0}
-			>
+			<div class="point-card grid gap-x-3 md:gap-x-6 lg:gap-x-8 xl:gap-x-12"
+				class:reverse={index % 2 == 0}>
 				<div class="icon">
-					<div class="item-icon bg-light p-2 rounded-full aspect-square">
+					<div class="item-icon relative bg-light p-2 rounded-full aspect-square">
 						<div class="w-6 md:w-8">{@html item.icon}</div>
 					</div>
 				</div>
-				<div class="grid text">
-					<h3
-						class="font-bold h-10 flex gap-3 items-center mb-4 md:mb-6 xl:mb-8 text-xl md:text-2xl xl:text-3xl"
-					>
+				<div class="grid text slide-in">
+					<h3 class="title font-bold h-10 flex gap-3 items-center mb-4 md:mb-6 xl:mb-8 text-xl md:text-2xl xl:text-3xl">
 						<span class="hidden">{index + 1}. </span>{item.title}
 					</h3>
-					<ul class="text-gray-600 grid gap-y-2">
+					<ul class="points relative text-gray-600 grid gap-y-2">
 						{#each item.points as point}
-							<li class="flex gap-2">
+							<li class="flex gap-2 slide-in">
 								<span>•</span>
 								<p>{point}</p>
 							</li>

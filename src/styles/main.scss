@@ -1,6 +1,8 @@
+@import './mixins';
 @import './colors';
 @import './transitions';
 @import './observer';
+@import './cards';
 
 @tailwind base;
 @tailwind components;
@@ -99,3 +101,8 @@ body {
         }
     }
 }
+
+.reveal-type {
+    will-change: opacity, transform;
+}
+  

@@ -12,7 +12,7 @@
 		<div class="relative flex items-center justify-between">
 			<!-- logo -->
 			<div class="max-w-full px-4 w-fit">
-				<a href="javascript:void(0)" class="block w-full py-1">
+				<a href="/" class="block w-full py-1">
 					<img src="/images/logo.png" alt="logo" class="h-16" />
 				</a>
 			</div>

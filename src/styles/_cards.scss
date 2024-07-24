@@ -1,0 +1,26 @@
+.icon-card{
+    border-radius: 1rem;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    place-content: center;
+    position: relative;
+
+    @include sm{
+        aspect-ratio: 1/1;
+        padding: 2rem;
+    }
+
+    @include md{
+        aspect-ratio: auto;
+    }
+
+    @include lg{
+        aspect-ratio: 3/4;
+        gap: 2rem;
+    }
+
+    @include xl{
+        aspect-ratio: 1/1;
+    }
+}
