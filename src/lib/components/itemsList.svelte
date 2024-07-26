@@ -126,14 +126,19 @@
 					<h3 class="title font-bold h-10 flex gap-3 items-center mb-4 md:mb-6 xl:mb-8 text-xl md:text-2xl xl:text-3xl">
 						<span class="hidden">{index + 1}. </span>{item.title}
 					</h3>
-					<ul class="points relative text-gray-600 grid gap-y-2">
-						{#each item.points as point}
-							<li class="flex gap-2 slide-in">
-								<span>•</span>
-								<p>{point}</p>
-							</li>
-						{/each}
-					</ul>
+                    <div class="points relative">
+                        {#if item.body}
+                            <p class="body text-gray-600 mb-6">{@html item.body}</p>
+                        {/if}
+                        <ul class="relative text-gray-600 grid gap-y-2">
+                            {#each item.points as point}
+                                <li class="flex gap-2 slide-in">
+                                    <span>•</span>
+                                    <p>{point}</p>
+                                </li>
+                            {/each}
+                        </ul>
+                    </div>
 				</div>
 			</div>
 			{#if index % 2 == 0}

@@ -10,11 +10,15 @@
 </script>
 
 
-<div class="py-10 space-y-6 sm:h-[90vh] lg:py-16 grid sm:gap-16 content-center lg:grid-cols-2 lg:items-center breakout">
-
+<div class="py-10 space-y-6 md:h-[90vh] lg:py-16 grid sm:gap-16 content-center md:grid-cols-2 lg:items-center breakout">
+    
+    <div class="w-full">
+        <img class="object-contain w-full h-full" src="/images/home_pic_1.webp" alt="multiple images">
+    </div>
+    
     <div class="w-full">
         <h1 class="text-5xl font-bold text-primary lg:text-6xl">
-            Cleanliness and <br>Culinary Excellence
+            Cleanliness & <br class="hidden md:block">Culinary Excellence
         </h1>
         
         <div class="mt-8 space-y-5">
@@ -27,12 +31,6 @@
             </div>
         </div>
     </div>
-
-    <div class="items-center grid grid-cols-2 gap-4 lg:flex justify-center w-full relative">
-        <img class="object-cover rounded-md lg:rounded-[2.5rem] aspect-[4/3] lg:max-w-[350px] xl:max-w-[450px] lg:absolute lg:translate-x-[30%] lg:translate-y-[30%] shadow-lg" src="/images/cleaning_table.webp" alt="cleaning a table">
-
-        <img class="object-cover rounded-md lg:rounded-[2.5rem] aspect-[4/3] lg:max-w-[350px] xl:max-w-[450px] lg:absolute lg:translate-x-[-30%] lg:translate-y-[-30%] shadow-lg" src="/images/cutlery_1.webp" alt="cutlery set for event">
-    </div>
 </div>
 
 <section class="services pt-48 sm:pt-60 pb-10 md:pb-44 breakout">
@@ -40,11 +38,11 @@
         <H2 text="What we do"/>
     </div>
     <div class="grid gap-8 md:grid-cols-2 md:gap-10 lg:gap-16 slide-in-parent">
-        <div class="rounded-xl overflow-hidden min-h-96 bg-cover relative group xl:aspect-[4/3] max-w-[650px] slide-in" style="background-image: url('/images/fork_scroll.webp');">
+        <div class="rounded-xl overflow-hidden min-h-96 bg-cover relative group xl:aspect-[4/3] max-w-[650px] slide-in" style="background-image: url('/images/catering_food.webp');">
             <div class="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(0,0,0,0)] z-[1] transition-all duration-500 opacity-90 group-hover:opacity-100"></div>
             <div class="absolute top-0 left-0 bottom-0 right-0 h-full w-full content p-4 z-[2] grid content-end">
                 <h3 class="font-bold text-white text-2xl lg:text-3xl transition-all duration-500 translate-y-10 group-hover:translate-y-0">Catering Services</h3>
-                <!-- <p class="text-gray-200 mt-4 transition-all duration-500 delay-75 translate-y-10 group-hover:translate-y-0"></p> -->
+                <p class="text-gray-200 mt-4 transition-all duration-500 delay-75 translate-y-10 group-hover:translate-y-0">Event Catering, customized menus, and our Bakery.</p>
                 <footer class="relative opacity-0 transition-all duration-500 delay-150 mt-4 translate-y-10 group-hover:translate-y-0 group-hover:opacity-100">
                     <a href="/catering/" class="next-button w-fit">
                         <span class="hover-underline-animation text-white"> Read more </span>
@@ -58,8 +56,8 @@
         <div class="rounded-xl overflow-hidden min-h-96 bg-cover relative group xl:aspect-[4/3] max-w-[650px] slide-in" style="background-image: url('/images/cleaning_table.webp');">
             <div class="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(0,0,0,0)] z-[1] transition-all duration-500 opacity-90 group-hover:opacity-100"></div>
             <div class="absolute top-0 left-0 bottom-0 right-0 h-full w-full content p-4 z-[2] grid content-end">
-                <h3 class="font-bold text-white text-2xl lg:text-3xl transition-all duration-500 translate-y-10 group-hover:translate-y-0">Cleaning Services and Waste Management</h3>
-                <!-- <p class="text-gray-200 mt-4 transition-all duration-500 delay-75 translate-y-10 group-hover:translate-y-0"></p> -->
+                <h3 class="font-bold text-white text-2xl lg:text-3xl transition-all duration-500 translate-y-10 group-hover:translate-y-0">Cleaning Services</h3>
+                <p class="text-gray-200 mt-4 transition-all duration-500 delay-75 translate-y-10 group-hover:translate-y-0">Regular, Deep and Specialized Cleaning, Waste Management and Fumigation.</p>
                 <footer class="relative opacity-0 transition-all duration-500 delay-150 mt-4 translate-y-10 group-hover:translate-y-0 group-hover:opacity-100">
                     <a href="/cleaning/" class="next-button w-fit">
                         <span class="hover-underline-animation text-white"> Read more </span>
@@ -70,11 +68,12 @@
                 </footer>
             </div>
         </div>
-        <div class="rounded-xl overflow-hidden min-h-96 bg-cover relative group xl:aspect-[4/3] max-w-[650px] slide-in" style="background-image: url('/images/coats_hangar.webp');">
+        <!-- laundry care -->
+        <div class="rounded-xl overflow-hidden min-h-96 bg-cover relative group xl:aspect-[4/3] max-w-[650px] slide-in" style="background-image: url('/images/laundry_hanged.webp');">
             <div class="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(0,0,0,0)] z-[1] transition-all duration-500 opacity-90 group-hover:opacity-100"></div>
             <div class="absolute top-0 left-0 bottom-0 right-0 h-full w-full content p-4 z-[2] grid content-end">
                 <h3 class="font-bold text-white text-2xl lg:text-3xl transition-all duration-500 translate-y-10 group-hover:translate-y-0">Laundry Care</h3>
-                <!-- <p class="text-gray-200 mt-4 transition-all duration-500 delay-75 translate-y-10 group-hover:translate-y-0"></p> -->
+                <p class="text-gray-200 mt-4 transition-all duration-500 delay-75 translate-y-10 group-hover:translate-y-0">Regular Laundry Cleaning, Specialized Treatments, Drop-off and Pick-up</p>
                 <footer class="relative opacity-0 transition-all duration-500 delay-150 mt-4 translate-y-10 group-hover:translate-y-0 group-hover:opacity-100">
                     <a href="/laundry_care/" class="next-button w-fit">
                         <span class="hover-underline-animation text-white"> Read more </span>
@@ -85,11 +84,12 @@
                 </footer>
             </div>
         </div>
+        <!-- supplies -->
         <div class="rounded-xl overflow-hidden min-h-96 bg-cover relative group xl:aspect-[4/3] max-w-[650px] slide-in" style="background-image: url('/images/plate_spoon_knife.webp');">
             <div class="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(0,0,0,0)] z-[1] transition-all duration-500 opacity-90 group-hover:opacity-100"></div>
             <div class="absolute top-0 left-0 bottom-0 right-0 h-full w-full content p-4 z-[2] grid content-end">
                 <h3 class="font-bold text-white text-2xl lg:text-3xl transition-all duration-500 translate-y-10 group-hover:translate-y-0">Kitchen and Cleaning Supplies</h3>
-                <!-- <p class="text-gray-200 mt-4 transition-all duration-500 delay-75 translate-y-10 group-hover:translate-y-0"></p> -->
+                <p class="text-gray-200 mt-4 transition-all duration-500 delay-75 translate-y-10 group-hover:translate-y-0">We also offer a streamlined process for the supply of kitchen supplies and cleaning equipment to support your culinary and cleaning needs.</p>
                 <footer class="relative opacity-0 transition-all duration-500 delay-150 mt-4 translate-y-10 group-hover:translate-y-0 group-hover:opacity-100">
                     <a href="/supplies/" class="next-button w-fit">
                         <span class="hover-underline-animation text-white"> Read more </span>

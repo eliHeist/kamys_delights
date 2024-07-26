@@ -33,22 +33,20 @@ export function slideIn() {
     slider_parents.forEach((slider_parent:HTMLElement) => {
         const sliders = slider_parent.querySelectorAll('.slide-in') as NodeListOf<HTMLElement>
 
-        sliders.forEach((slider:HTMLElement) => {
-            gsap.from(slider, {
-                scrollTrigger: {
-                    trigger: slider_parent,
-                    // toggleActions: 'play pause reverse pause',
-                    start: 'top 80%',
-                    end: 'top 20%',
-                    scrub: true,
-                    markers: false
-                },
-                opacity: 0,
-                top: 200,
-                duration: 1,
-                stagger: 0.5,
-                ease: "power1.out"
-            })
+        gsap.from(sliders, {
+            scrollTrigger: {
+                trigger: slider_parent,
+                // toggleActions: 'play pause reverse pause',
+                start: 'top 80%',
+                end: 'top 20%',
+                scrub: 1,
+                markers: false
+            },
+            opacity: 0,
+            top: 200,
+            duration: 1,
+            stagger: 0.5,
+            ease: "power1.out"
         })
     })
 }
