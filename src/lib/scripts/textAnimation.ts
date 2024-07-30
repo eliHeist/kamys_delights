@@ -17,10 +17,15 @@ export function observeText(start: string = 'top 80%', end: string = 'top 20%') 
                 trigger: char,
                 start: 'top 80%',
                 end: 'top 20%',
-                scrub: true,
-                markers: false
+                scrub: false,
+                markers: false,
+                toggleActions: 'play play reverse reverse',
             },
-            opacity: 0.2,
+            opacity: 0,
+            y: -50,
+            // scaleY: .5,
+            rotateX: '90deg',
+            transformOrigin: 'top',
             stagger: 0.1,
             ease: "power1.out"
         })
@@ -36,7 +41,7 @@ export function slideIn() {
         gsap.from(sliders, {
             scrollTrigger: {
                 trigger: slider_parent,
-                // toggleActions: 'play pause reverse pause',
+                toggleActions: 'play play reverse reverse',
                 start: 'top 80%',
                 end: 'top 20%',
                 scrub: 1,
@@ -58,7 +63,7 @@ export function fadeIn() {
         gsap.from(fader, {
             scrollTrigger: {
                 trigger: fader,
-                // toggleActions: 'play pause reverse pause',
+                toggleActions: 'play play reverse reverse',
                 start: 'top 80%',
                 end: 'top center',
                 scrub: true,

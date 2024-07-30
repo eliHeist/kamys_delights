@@ -226,16 +226,20 @@
     </div>
 </section>
 
-<section class="pt-32 pb-56 px-4 grid gap-y-64 lg:gap-y-80">
-    <p class="text-4xl lg:text-6xl  font-bold max-w-screen-md mx-auto reveal-type">
-        At Kamy’s Delights Ltd, we are passionate about creating clean, inviting spaces and unforgettable dining experiences.
-    </p>
+<section class="grid full-width">
+    <div class="h-dvh bg-primary text-white grid place-content-center">
+        <p class="text-4xl lg:text-6xl  font-bold max-w-screen-md mx-auto reveal-type">
+            At Kamy’s Delights Ltd, we are passionate about creating clean, inviting spaces and unforgettable dining experiences.
+        </p>
+    </div>
+    <div class="h-dvh bg-light grid place-content-center">
+        <p class="lg:mb-0 text-3xl lg:text-5xl max-w-screen-lg mx-auto reveal-type">
+            Whether you’re in need of cleaning services to maintain a pristine environment or catering services to impress your guests, we are your trusted partner for excellence in hospitality. 
+            <br><br>
+            Contact us today to learn more about how we can serve you.
+        </p>
+    </div>
 
-    <p class="lg:mb-0 text-3xl lg:text-5xl max-w-screen-lg mx-auto reveal-type">
-        Whether you’re in need of cleaning services to maintain a pristine environment or catering services to impress your guests, we are your trusted partner for excellence in hospitality. 
-        <br><br>
-        Contact us today to learn more about how we can serve you.
-    </p>
 </section>
 
 

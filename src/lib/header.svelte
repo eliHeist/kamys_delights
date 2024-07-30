@@ -7,7 +7,7 @@
 </script>
 
 <!-- ====== Navbar Section Start -->
-<header class="items-center w-full content-grid">
+<header class="items-center w-full content-grid sticky bg-white z-20 top-0">
 	<div class="breakout">
 		<div class="relative flex items-center justify-between">
 			<!-- logo -->
