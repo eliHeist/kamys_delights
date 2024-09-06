@@ -21,11 +21,8 @@ export function observeText(start: string = 'top 80%', end: string = 'top 20%') 
                 markers: false,
                 toggleActions: 'play play reverse reverse',
             },
-            opacity: 0,
-            y: -50,
-            // scaleY: .5,
-            rotateX: '90deg',
-            transformOrigin: 'top',
+            opacity: 0.2,
+            transformOrigin: 'bottom',
             stagger: 0.1,
             ease: "power1.out"
         })
