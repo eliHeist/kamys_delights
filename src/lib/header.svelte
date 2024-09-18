@@ -136,11 +136,11 @@
 
 <style lang="scss">
     header {
-        transition: transform 0.3s ease;
-        transform: translateY(0);
+        transition: all 0.3s ease-in-out;
+        transform: translateY(0) scaleX(1);
 
         &.collapse {
-            transform: translateY(-100%);
+            transform: translateY(-100%) scaleX(1.2);
         }
     }
     

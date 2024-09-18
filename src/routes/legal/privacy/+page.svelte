@@ -1,6 +1,10 @@
 <script>
 </script>
 
+<svelte:head>
+    <title>Privacy Policy | Kamy's Delights</title>
+</svelte:head>
+
 <section class="max-w-4xl mx-auto px-6 py-12">
 	<h1 class="text-3xl font-bold text-gray-900 mb-6">Privacy Policy</h1>
 

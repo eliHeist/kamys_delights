@@ -84,6 +84,10 @@
 	];
 </script>
 
+<svelte:head>
+    <title>Laundry services | Kamy's Delights</title>
+</svelte:head>
+
 <section class="hero relative pb-16 full-width">
 	<div class="hidden lg:block relative h-80vh min-h-[60vh] xl:h-[90vh] max-w-[90%] mx-auto">
 		<svg class="w-full h-full -z-10" viewBox="0 0 1256 880">

@@ -90,6 +90,10 @@
     ];
 </script>
 
+<svelte:head>
+    <title>Catering services | Kamy's Delights</title>
+</svelte:head>
+
 <section class="hero relative pb-16 full-width">
     <div class="hidden md:block relative h-[80vh] lg:h-[98vh] w-fit mx-auto">
         <svg class="w-full h-full -z-10" viewBox="0 0 1200 1143" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,6 +1,10 @@
 <script lang="ts">
 </script>
 
+<svelte:head>
+    <title>Terms and Conditions | Kamy's Delights</title>
+</svelte:head>
+
 <section class="max-w-4xl mx-auto px-6 py-12">
 	<h1 class="text-3xl font-bold text-gray-900 mb-6">Terms and Conditions</h1>
 

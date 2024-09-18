@@ -9,6 +9,10 @@
 
 </script>
 
+<svelte:head>
+    <title>Kamy's Delights</title>
+</svelte:head>
+
 
 <div class="py-10 space-y-6 md:h-[90vh] lg:py-16 grid sm:gap-16 content-center md:grid-cols-2 lg:items-center breakout">
     
