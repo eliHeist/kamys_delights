@@ -16,7 +16,7 @@
     <p class="mt-8 text-xl lg:text-2xl">We are eager to engage with you. Lets walk thruough how you can get in touch with us.</p>
 </section>
 
-<section class="pb-64 pt-16 text-light">
+<section class="pb-64 pt-16">
     <div class="grid gap-y-44 sm:grid-cols-2 text-2xl md:text-3xl">
         <div class="grid">
             <img src="/gifs/call.gif" alt="location" class="h-16 mb-6">
