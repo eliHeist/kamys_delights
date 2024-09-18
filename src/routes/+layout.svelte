@@ -7,6 +7,8 @@
 	import Footer from '$lib/footer.svelte';
 	import { isLoading } from '$lib/stores/loading';
 
+    import { beforeNavigate, afterNavigate } from "$app/navigation";
+
 	onMount(() => {
 		slideIn();
 		fadeIn();
@@ -31,19 +33,28 @@
 
 	// Simulate page loading using SvelteKit hooks
 	export let data;
+    let loader = false;
+
+    beforeNavigate(() => {
+        loader = true;
+    })
+
+    afterNavigate(() => {
+        loader = false
+    })
+    
+
 </script>
 
 <Header />
 
+{#key data.url}
 <div class="content-grid">
-	{#if loading}
-		<div class="loader">
-			<!-- Your custom loader goes here -->
-			<p>Loading...</p>
-		</div>
-	{/if}
+    <div id="loader" class="loader" class:hide={!loader}>
+    </div>
 	<slot />
 </div>
+{/key}
 
 <Footer />
 
@@ -58,7 +69,16 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: rgba(255, 255, 255, 0.9);
+		background-color: rgba(243, 239, 242, 0); /* Semi-transparent background */
+        backdrop-filter: blur(1px);
 		z-index: 999;
+        pointer-events: all;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
 	}
 </style>

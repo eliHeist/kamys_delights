@@ -35,12 +35,12 @@
                 duration: 1
             });
 
-            // icon animation
+            // title animation
             gsap.from(title, {
                 scrollTrigger: {
                     trigger: title,
-                    start: 'top 80%',
-                    end: 'top 55%',
+                    start: 'top 90%',
+                    end: 'top 40%',
                     scrub: 1
                 },
                 stagger: 0.2,
@@ -48,12 +48,12 @@
                 left: 50,
             });
 
-            // icon animation
+            // body animation
             gsap.from(points, {
                 scrollTrigger: {
                     trigger: points,
-                    start: 'top 80%',
-                    end: 'top 50%',
+                    start: 'top 90%',
+                    end: 'top 75%',
                     scrub: 1
                 },
                 stagger: 0.2,
