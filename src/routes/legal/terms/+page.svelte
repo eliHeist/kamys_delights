@@ -58,16 +58,12 @@
 
 	<h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">7. Governing Law</h2>
 	<p class="text-gray-700 mb-4">
-		These terms and conditions are governed by and construed in accordance with the laws of [Your
-		Country/State]. Any disputes arising from the use of our services will be subject to the
-		jurisdiction of the courts in [Your Country/State].
+		These terms and conditions are governed by and construed in accordance with the laws of Uganda. Any disputes arising from the use of our services will be subject to the
+		jurisdiction of the courts in Uganda.
 	</p>
 
 	<h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">8. Contact Us</h2>
 	<p class="text-gray-700">
-		If you have any questions about these terms and conditions, please contact us at <a
-			href="mailto:info@kamysdelights.com"
-			class="text-blue-600 underline">info@kamysdelights.com</a
-		>.
+		If you have any questions about these terms and conditions, please contact us at <a href="mailto:info@kamysdelights.com" class="text-blue-600 underline">info@kamysdelights.com</a>.
 	</p>
 </section>
