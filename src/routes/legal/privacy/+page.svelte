@@ -1,61 +1,20 @@
-<script>
+<script lang="ts">
+	import Seo from '#lib/components/Seo.svelte';
+	import LegalPage from '../LegalPage.svelte';
+	import { site } from '#lib/content/site.ts';
 </script>
 
-<svelte:head>
-    <title>Privacy Policy | Kamy's Delights</title>
-</svelte:head>
+<Seo title="Privacy Policy" description="How Kamy's Delights Ltd handles personal information shared through this website, WhatsApp and phone." />
 
-<section class="max-w-4xl mx-auto px-6 py-12">
-	<h1 class="text-3xl font-bold text-gray-900 mb-6">Privacy Policy</h1>
-
-	<p class="text-gray-700 mb-4">
-		At Kamy's Delights, we respect your privacy and are committed to protecting your personal
-		information. This Privacy Policy outlines how we collect, use, and safeguard your data when you
-		use our website or services.
-	</p>
-
-	<h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">1. Information We Collect</h2>
-	<p class="text-gray-700 mb-4">
-		We may collect personal information such as your name, email address, phone number, and payment
-		details when you place an order, sign up for services, or contact us. We also collect
-		non-personal information such as browser type, IP address, and usage data to improve our
-		services.
-	</p>
-
-	<h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">2. How We Use Your Information</h2>
-	<p class="text-gray-700 mb-4">
-		Your information is used to provide and improve our services, process orders, communicate with
-		you, and for marketing purposes. We do not sell or share your personal information with third
-		parties, except as required by law or with your consent.
-	</p>
-
-	<h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">3. Data Security</h2>
-	<p class="text-gray-700 mb-4">
-		We implement industry-standard security measures to protect your data from unauthorized access,
-		loss, or misuse. However, no method of transmission over the internet is 100% secure, and we
-		cannot guarantee absolute security.
-	</p>
-
-	<h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">4. Your Rights</h2>
-	<p class="text-gray-700 mb-4">
-		You have the right to access, update, or request the deletion of your personal information at
-		any time. To exercise your rights, please contact us at <a
-			href="mailto:info@kamysdelights.com"
-			class="text-blue-600 underline">info@kamysdelights.com</a
-		>.
-	</p>
-
-	<h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">5. Changes to This Policy</h2>
-	<p class="text-gray-700 mb-4">
-		We may update this Privacy Policy from time to time. Any changes will be posted on this page,
-		and we encourage you to review this policy periodically.
-	</p>
-
-	<h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">6. Contact Us</h2>
-	<p class="text-gray-700">
-		If you have any questions or concerns about this Privacy Policy, please contact us at <a
-			href="mailto:info@kamysdelights.com"
-			class="text-blue-600 underline">info@kamysdelights.com</a
-		>.
-	</p>
-</section>
+<LegalPage title="Privacy Policy" updated="November 2026">
+	<p>{site.legalName} ("we", "us") respects your privacy. This policy explains what information we collect when you use this website or contact us, and how we use it.</p>
+	<h2>Information we collect</h2>
+	<p>This website has no accounts and no forms that store data on our servers. When you contact us by WhatsApp, phone or email, we receive the details you choose to share, such as your name, phone number, location and the service you need.</p>
+	<p>We may use privacy-friendly analytics to count page visits and clicks on contact buttons. This data is aggregated and does not identify you personally.</p>
+	<h2>How we use it</h2>
+	<p>We use your details only to reply to your enquiry, prepare quotes, and deliver and follow up on the services you book. We do not sell or rent your information.</p>
+	<h2>Third parties</h2>
+	<p>Messages sent through WhatsApp are handled under WhatsApp's own privacy policy. Links to Google Maps open Google's services.</p>
+	<h2>Your rights</h2>
+	<p>You may ask us to access, correct or delete the personal information we hold about you, in line with Uganda's Data Protection and Privacy Act, 2019. Contact us at <a href="mailto:{site.email}">{site.email}</a>.</p>
+</LegalPage>

@@ -1,16 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-UG">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Kamy's Delights, Catering services, Bakery, Cleaning, Waste management, Deep cleaning, Laundry care, Doby service, Dry cleaning, Pest control, Fumigation, Window and wall cleaning, kitchen equipment, cleaning supplies, cleaning equipment">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="text-scale" content="scale" />
+		<meta name="theme-color" content="#5f2876" />
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="%sveltekit.assets%/icons/icon-32.png" sizes="32x32" type="image/png" />
+		<link rel="apple-touch-icon" href="%sveltekit.assets%/icons/apple-touch-icon.png" />
+		<link rel="manifest" href="%sveltekit.assets%/site.webmanifest" />
+		<!-- Mark JS as available so reveal animations only hide content when they can run -->
+		<script>
+			// Reveal targets are hidden until GSAP animates them; if GSAP hasn't loaded
+			// after 4s (slow or blocked network), show everything rather than leave gaps.
+			(function (d) {
+				d.classList.add('js');
+				setTimeout(function () {
+					if (!d.classList.contains('gsap')) d.classList.add('gsap-failed');
+				}, 4000);
+			})(document.documentElement);
+		</script>
 		%sveltekit.head%
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents;font-family: 'Istok Web', sans-serif;" class="content-grid text-black">%sveltekit.body%</div>
+		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

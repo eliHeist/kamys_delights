@@ -1,0 +1,195 @@
+@import '@fontsource-variable/fraunces/soft.css';
+@import '@fontsource-variable/fraunces/soft-italic.css';
+@import '@fontsource-variable/inter';
+@import 'tailwindcss';
+
+/* ───────────────────────── Brand tokens ───────────────────────── */
+@theme {
+	--font-display: 'Fraunces Variable', 'Iowan Old Style', Georgia, serif;
+	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+	/* From the Kamy's Delights brand guide */
+	--color-plum-50: #f7f2f9;
+	--color-plum-100: #efe6f3;
+	--color-plum-200: #dcc9e5;
+	--color-plum-300: #bf9fd0;
+	--color-plum-400: #9a6cb2;
+	--color-plum-500: #7b4594;
+	--color-plum-600: #5f2876; /* primary */
+	--color-plum-700: #4f2063;
+	--color-plum-800: #3d184d;
+	--color-plum-900: #2a1036;
+	--color-plum-950: #1e0b27;
+
+	--color-crimson-400: #d86574;
+	--color-crimson-500: #c64252; /* the star */
+	--color-crimson-600: #a83242;
+
+	--color-champagne-100: #f5f0e3;
+	--color-champagne-200: #ece3cc;
+	--color-champagne-300: #dccfac; /* brand */
+	--color-champagne-500: #b8a574;
+
+	--color-mauve-400: #a8949f;
+	--color-mauve-500: #907b88; /* brand */
+	--color-mauve-600: #75626e;
+
+	--color-lilac-50: #f8f5f9;
+	--color-lilac-100: #f1ecf3;
+	--color-lilac-200: #e7dfeb; /* brand */
+
+	--color-cream: #fbf8f4;
+	--color-ink: #1e1424;
+
+	--radius-card: 1.5rem;
+	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+	/* rotate/translate properties (not transform) so GSAP parallax can own transform */
+	--animate-spin-slow: spin-soft 60s linear infinite;
+	--animate-marquee: marquee 40s linear infinite;
+	--animate-float: float 7s ease-in-out infinite;
+
+	@keyframes spin-soft {
+		to {
+			rotate: 360deg;
+		}
+	}
+	@keyframes marquee {
+		to {
+			transform: translateX(-50%);
+		}
+	}
+	@keyframes float {
+		0%,
+		100% {
+			translate: 0 0;
+			rotate: 0deg;
+		}
+		50% {
+			translate: 0 -10px;
+			rotate: 4deg;
+		}
+	}
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+@layer base {
+	html {
+		background: var(--color-cream);
+		color: var(--color-ink);
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+		scroll-padding-top: 6rem;
+		interpolate-size: allow-keywords;
+	}
+	body {
+		font-family: var(--font-sans);
+		font-feature-settings: 'cv11', 'ss01';
+	}
+	h1,
+	h2,
+	h3,
+	.font-display {
+		font-family: var(--font-display);
+		font-optical-sizing: auto;
+		font-variation-settings: 'SOFT' 50;
+		letter-spacing: -0.02em;
+		text-wrap: balance;
+	}
+	p {
+		text-wrap: pretty;
+	}
+	::selection {
+		background: var(--color-plum-600);
+		color: white;
+	}
+	:focus-visible {
+		outline: 2px solid var(--color-crimson-500);
+		outline-offset: 3px;
+		border-radius: 6px;
+	}
+}
+
+/* ───────────────────────── Utilities ───────────────────────── */
+@utility container-site {
+	width: 100%;
+	max-width: 80rem;
+	margin-inline: auto;
+	padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+@utility eyebrow {
+	font-family: var(--font-sans);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--color-mauve-500);
+}
+
+@utility hairline {
+	height: 1px;
+	background: linear-gradient(90deg, var(--color-champagne-300), transparent);
+}
+
+/* Italic serif emphasis inside headings: <em> */
+@layer components {
+	h1 em,
+	h2 em {
+		font-style: italic;
+		font-variation-settings: 'SOFT' 100;
+		color: var(--color-plum-600);
+	}
+	.on-dark h1 em,
+	.on-dark h2 em {
+		color: var(--color-champagne-300);
+	}
+}
+
+/* ───────────────────────── Motion ───────────────────────── */
+/* GSAP reveals (src/lib/gsap/reveals.ts).
+   Targets start hidden only when JS runs; html.gsap-failed (set by a timeout in app.html
+   if GSAP never loads) and reduced motion show everything immediately. */
+.js:not(.gsap-failed) [data-reveal],
+.js:not(.gsap-failed) [data-split] {
+	opacity: 0;
+	visibility: hidden;
+}
+/* Room for descenders/italics inside SplitText line masks */
+[data-split] .split-line {
+	padding-bottom: 0.14em;
+	margin-bottom: -0.14em;
+}
+
+/* ScrollSmoother: the fixed header and WhatsApp button live outside #smooth-wrapper */
+#smooth-content {
+	will-change: transform;
+}
+
+/* Accordion height animation for <details> (progressive enhancement) */
+details::details-content {
+	block-size: 0;
+	overflow: hidden;
+	transition:
+		block-size 0.4s var(--ease-out-soft),
+		content-visibility 0.4s allow-discrete;
+}
+details[open]::details-content {
+	block-size: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+	.js [data-reveal],
+	.js [data-split] {
+		opacity: 1;
+		visibility: visible;
+	}
+}
