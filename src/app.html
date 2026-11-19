@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-UG">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="text-scale" content="scale" />
+		<meta name="theme-color" content="#5f2876" />
+		<meta name="format-detection" content="telephone=no" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="%sveltekit.assets%/icons/icon-32.png" sizes="32x32" type="image/png" />
+		<link rel="apple-touch-icon" href="%sveltekit.assets%/icons/apple-touch-icon.png" />
+		<link rel="manifest" href="%sveltekit.assets%/site.webmanifest" />
+		<!-- Mark JS as available so reveal animations only hide content when they can run -->
+		<script>
+			// Reveal targets are hidden until GSAP animates them; if GSAP hasn't loaded
+			// after 4s (slow or blocked network), show everything rather than leave gaps.
+			(function (d) {
+				d.classList.add('js');
+				setTimeout(function () {
+					if (!d.classList.contains('gsap')) d.classList.add('gsap-failed');
+				}, 4000);
+			})(document.documentElement);
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
