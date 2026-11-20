@@ -66,11 +66,11 @@
 />
 
 <!-- ───────────── Hero ───────────── -->
-<section class="relative isolate overflow-hidden pt-28 lg:pt-32">
+<section class="relative isolate flex flex-col overflow-hidden pt-28 lg:min-h-svh lg:pt-20">
 	<div class="absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_top_right,var(--color-lilac-200),transparent_60%),radial-gradient(ellipse_at_bottom_left,var(--color-champagne-100),transparent_55%)]"></div>
 	<Star data-speed="0.8" class="animate-spin-slow absolute top-10 -right-40 -z-10 w-[46rem] text-plum-600/[0.045]" />
 
-	<div class="container-site grid items-center gap-14 pb-20 lg:grid-cols-12 lg:gap-10 lg:pb-28">
+	<div class="container-site grid flex-1 items-center gap-14 pb-20 lg:grid-cols-12 lg:gap-10 lg:py-12">
 		<div class="lg:col-span-6 xl:col-span-6">
 			<p data-reveal="rise" class="eyebrow flex items-center gap-3">
 				<span class="h-px w-8 bg-crimson-500"></span>Cleaning · Laundry · Catering in Kampala

@@ -32,15 +32,16 @@
 
 <svelte:window onscroll={onScroll} onkeydown={(e) => e.key === 'Escape' && (open = false)} />
 
-<header
-	class="fixed inset-x-0 top-0 z-50 transition-transform duration-500 ease-[var(--ease-out-soft)] {hidden
-		? '-translate-y-full'
-		: 'translate-y-0'}"
->
+<!-- No transform on <header> itself: a transformed ancestor would trap the fixed mobile menu inside it -->
+<header class="fixed inset-x-0 top-0 z-50">
 	<div
-		class="transition-[background-color,box-shadow,backdrop-filter] duration-500 {scrolled || open
-			? 'bg-cream/80 shadow-[0_1px_0_rgb(220_207_172/0.6)] backdrop-blur-xl'
-			: 'bg-transparent'}"
+		class="relative z-10 transition-[transform,background-color,box-shadow,backdrop-filter] duration-500 ease-[var(--ease-out-soft)] {hidden
+			? '-translate-y-full'
+			: 'translate-y-0'} {open
+			? 'bg-cream'
+			: scrolled
+				? 'bg-cream/80 shadow-[0_1px_0_rgb(220_207_172/0.6)] backdrop-blur-xl'
+				: 'bg-transparent'}"
 	>
 		<div class="container-site flex h-18 items-center justify-between gap-6 lg:h-20">
 			<a href="/" class="relative z-10 -ml-1 shrink-0 rounded-md p-1" aria-label="{site.name} home">
@@ -98,12 +99,15 @@
 	<!-- Mobile menu -->
 	<div
 		id="mobile-menu"
-		class="fixed inset-x-0 top-18 bottom-0 bg-cream transition-[opacity,visibility] duration-400 lg:hidden {open
+		class="fixed inset-0 overflow-y-auto bg-cream transition-[opacity,visibility] duration-400 lg:hidden {open
 			? 'visible opacity-100'
 			: 'invisible opacity-0'}"
 		inert={!open}
 	>
-		<nav aria-label="Mobile" class="container-site flex h-full flex-col pt-6 pb-10">
+		<nav
+			aria-label="Mobile"
+			class="container-site flex min-h-full flex-col pt-32 pb-[max(2.5rem,env(safe-area-inset-bottom))]"
+		>
 			<ul class="flex flex-col">
 				{#each nav as item, i (item.href)}
 					<li
