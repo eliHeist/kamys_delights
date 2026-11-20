@@ -8,6 +8,11 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface ImportMetaEnv {
+		/** Microsoft Clarity project ID; set in Vercel. Unset = no banner, no tracking. */
+		readonly VITE_CLARITY_ID?: string;
+	}
 }
 
 export {};

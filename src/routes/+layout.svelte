@@ -6,6 +6,9 @@
 	import Header from '#lib/components/Header.svelte';
 	import Footer from '#lib/components/Footer.svelte';
 	import WhatsAppFab from '#lib/components/WhatsAppFab.svelte';
+	import CookieBanner from '#lib/components/CookieBanner.svelte';
+	import { initConsent } from '#lib/consent.svelte.ts';
+	import { onMount } from 'svelte';
 	import {
 		loadGsap,
 		markSmootherReady,
@@ -20,6 +23,8 @@
 	import inter from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 
 	let { children }: LayoutProps = $props();
+
+	onMount(initConsent);
 
 	let main = $state<HTMLElement>();
 	let smoother: InstanceType<GsapModules['ScrollSmoother']> | undefined;
@@ -118,6 +123,7 @@
 <!-- Fixed elements stay outside the smooth-scroll wrapper -->
 <Header />
 <WhatsAppFab />
+<CookieBanner />
 
 <div id="smooth-wrapper">
 	<div id="smooth-content">
