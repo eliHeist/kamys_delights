@@ -22,7 +22,7 @@ export const site = {
 	locale: 'en_UG',
 	description:
 		"Kamy's Delights is a Kampala hospitality company offering professional cleaning & facility management, laundry & dry cleaning with free pick-up, and catering & custom cakes for weddings, parties and corporate events.",
-	email: 'kamysdelightslimited@gmail.com',
+	email: 'info@kamysdelights.com',
 	phones: [
 		{ label: 'Mobile & WhatsApp', display: '+256 763 521 041', e164: '+256763521041' },
 		{ label: 'Office', display: '+256 393 000 621', e164: '+256393000621' }

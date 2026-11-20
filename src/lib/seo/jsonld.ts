@@ -5,6 +5,14 @@ type Json = Record<string, unknown>;
 
 export const ORG_ID = `${site.url}/#organization`;
 
+/** Developer credit, carried in the WebSite schema (not shown on the page) */
+const developer = {
+	'@type': 'Organization',
+	'@id': 'https://dakdot.com/#organization',
+	name: 'Dakdot Creations Limited',
+	url: 'https://dakdot.com'
+};
+
 const openingHours = {
 	'@type': 'OpeningHoursSpecification',
 	dayOfWeek: site.hours.days,
@@ -125,6 +133,7 @@ export function website(): Json {
 		name: site.name,
 		url: site.url,
 		publisher: { '@id': ORG_ID },
+		creator: developer,
 		inLanguage: 'en-UG'
 	};
 }

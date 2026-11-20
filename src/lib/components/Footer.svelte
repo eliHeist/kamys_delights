@@ -4,6 +4,7 @@
 	import Logo from './Logo.svelte';
 	import Star from './Star.svelte';
 	import Icon from './Icon.svelte';
+	import { CLARITY_ID, openCookieSettings } from '#lib/consent.svelte.ts';
 
 	const year = new Date().getFullYear();
 </script>
@@ -88,9 +89,11 @@
 			<p class="flex gap-5">
 				<a class="footer-link" href="/legal/privacy">Privacy</a>
 				<a class="footer-link" href="/legal/terms">Terms</a>
-				<a class="footer-link" href="https://dakdot.com" rel="noopener" target="_blank"
-					>Site by Dakdot Creations</a
-				>
+				{#if CLARITY_ID}
+					<button type="button" class="footer-link cursor-pointer" onclick={openCookieSettings}
+						>Cookie settings</button
+					>
+				{/if}
 			</p>
 		</div>
 	</div>
